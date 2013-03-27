@@ -1,5 +1,5 @@
 <?php
-require_once('rackspace.inc');
+require_once('rackspace.php');
 
 define('INIFILE', 'auth.ini');
 
