@@ -1,5 +1,5 @@
 <?php
-require_once('rackspace.inc');
+require_once('rackspace.php');
 
 define('INIFILE', 'auth.ini');
 define('ORIGSERVERID', '64e54691-46d4-405c-94c6-ce54bb756df0');
