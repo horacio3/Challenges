@@ -17,3 +17,4 @@ php curl needs ca bundle to attach to https address
 
 http://ea.tl/2012/02/02/windows-php-curl-ssl-certificate-problem/
 vb script for ca-bundle
+
