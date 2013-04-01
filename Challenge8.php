@@ -4,11 +4,11 @@ require_once('rackspace.php');
 
 define('INIFILE', 'auth.ini');
 define('CONTAINERNAME', 'Challenge8');
-define('CNAME', 'Challenge.domain.com');
+define('CNAME', 'Challenge.greyskell.com');
 define('TEMP_URL_SECRET', 'April is the cruelest month, breeding lilacs...');
 
 function UploadProgress($len) {
-  printf("[uploading %d bytes]", $len);
+	printf("[uploading %d bytes]", $len);
 }
 
 $ini = parse_ini_file(INIFILE, TRUE);
@@ -38,10 +38,10 @@ $cdnversion = $container->PublishToCDN();
 // Create HTML
 printf("Creating object...\n");
 $doc = DOMDocument::loadHTML("<html><body>Test<br></body></html>");
+$object = $container->DataObject();
 $doc->SaveHTMLFILE("temp.html");
 
 // Upload HTML to Container
-$object = $container->DataObject();
 $object->Create(array('name'=>'index.html', 'content_type'=>'text/html'),'temp.html');
 
 // Find Domain.com from subdomain.domain.com
@@ -63,7 +63,7 @@ while($domain = $dlist->Next()) {
 			'type' => 'CNAME',
 			'name' => CNAME,
 			'ttl'  => 600,
-			'data' => $container->PublicURL(),
+			'data' => parse_url($container->PublicURL())['host'],
 			'comment' => 'Added '.date('Y-m-d H:i:s')))
 		;
 		}
