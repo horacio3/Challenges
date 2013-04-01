@@ -38,10 +38,10 @@ $cdnversion = $container->PublishToCDN();
 // Create HTML
 printf("Creating object...\n");
 $doc = DOMDocument::loadHTML("<html><body>Test<br></body></html>");
-$object = $container->DataObject();
 $doc->SaveHTMLFILE("temp.html");
 
 // Upload HTML to Container
+$object = $container->DataObject();
 $object->Create(array('name'=>'index.html', 'content_type'=>'text/html'),'temp.html');
 
 // Find Domain.com from subdomain.domain.com
