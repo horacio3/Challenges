@@ -4,7 +4,7 @@ require_once('rackspace.php');
 
 define('INIFILE', 'auth.ini');
 define('CONTAINERNAME', 'Challenge8');
-define('CNAME', 'Challenge.greyskell.com');
+define('CNAME', 'Challenge.domain.com');
 define('TEMP_URL_SECRET', 'April is the cruelest month, breeding lilacs...');
 
 function UploadProgress($len) {
